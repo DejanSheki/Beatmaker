@@ -36,7 +36,7 @@ svg {
 }
 
 .hihat-pad {
-    background: rgb(223, 174, 97);
+    background: rgb(223, 164, 71);
 }
 
 .kick-pad.active {
@@ -84,7 +84,7 @@ svg {
 
 .controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex: 1;
     margin: 0rem 2rem;
@@ -184,9 +184,6 @@ select {
     .controls h1 {
         font-size: 1.2rem;
     }
-    .controls {
-        justify-content: center;
-    }
     .kick-pad,
     .snare-pad,
     .perc-pad,
@@ -210,8 +207,5 @@ select {
     .perc-pad,
     .hihat-pad {
         width: 2rem;
-    }
-    .controls {
-        justify-content: center;
     }
 }
