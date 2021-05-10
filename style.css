@@ -15,8 +15,9 @@ svg {
 
 .kick-pad,
 .snare-pad,
+.perc-pad,
 .hihat-pad {
-    width: 5rem;
+    width: 4rem;
     height: 5rem;
     margin: 1rem 0.5rem;
     cursor: pointer;
@@ -28,6 +29,10 @@ svg {
 
 .snare-pad {
     background: rgb(213, 101, 223);
+}
+
+.perc-pad {
+    background: rgb(101, 223, 117);
 }
 
 .hihat-pad {
@@ -42,6 +47,10 @@ svg {
     background: rgb(190, 4, 207);
 }
 
+.perc-pad.active {
+    background: rgb(4, 207, 31);
+}
+
 .hihat-pad.active {
     background: rgb(214, 135, 8);
 }
@@ -52,20 +61,23 @@ svg {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgb(30, 30, 32);
 }
 
 .kick-track,
 .snare-track,
+.perc-track,
 .hihat-track {
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 90%;
     justify-content: space-between;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
 }
 
 .kick,
 .snare,
+.perc,
 .hihat {
     display: flex;
 }
@@ -78,10 +90,15 @@ svg {
     margin: 0rem 2rem;
 }
 
+.controls h1 {
+    color: rgb(250, 248, 238);
+}
+
 .controls button {
     padding: 0.5rem 0.7rem;
+    margin: 0 1rem;
     border: none;
-    background: rgb(92, 92, 95);
+    background: rgb(70, 70, 77);
     color: rgb(250, 248, 238);
     font-size: 1.2rem;
     cursor: pointer;
@@ -95,7 +112,7 @@ svg {
 .play {
     padding: 1rem 2rem;
     font-size: 1.5rem;
-    background: rgb(92, 92, 95);
+    background: rgb(70, 70, 77);
     color: rgb(250, 248, 238);
     border: none;
     cursor: pointer;
@@ -112,11 +129,89 @@ select {
     background: rgb(199, 27, 27);
 }
 
+.tempo {
+    margin: 3rem;
+    width: 30%;
+}
+
+.tempo-slider {
+    padding: 0.1rem;
+    -webkit-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    background: rgb(70, 70, 77);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.tempo p {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    color: rgb(250, 248, 238);
+}
+
 @keyframes playTrack {
     from {
         transform: scale(1);
     }
     to {
         transform: scale(1.2);
+    }
+}
+
+.resolution {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .resolution {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(30, 30, 32);
+        height: 100vh;
+        color: rgb(250, 248, 238);
+        padding: 0 5rem;
+    }
+    .sequencer {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .controls h1 {
+        font-size: 1.2rem;
+    }
+    .controls {
+        justify-content: center;
+    }
+    .kick-pad,
+    .snare-pad,
+    .perc-pad,
+    .hihat-pad {
+        width: 1.4rem;
+    }
+    .controls button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    select {
+        padding: 0.4rem;
+        font-size: 1rem;
+        min-width: 7rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .kick-pad,
+    .snare-pad,
+    .perc-pad,
+    .hihat-pad {
+        width: 2rem;
+    }
+    .controls {
+        justify-content: center;
     }
 }
